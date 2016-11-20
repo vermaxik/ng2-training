@@ -1,6 +1,11 @@
 .DS_Store
 .sublime-project
+npm-debug.log
 /hello_world/node_modules
 /hello_world/app/*.js
 /hello_world/app/*.map
+
+/table-component/node_modules
+/table-component/app/*.js
+/table-component/app/*.map
 

@@ -1,0 +1,9 @@
+<h1>Table rows: {{table_rows}}</h1>
+<table>
+  <tr *ngFor="let product of Products; let i = index;">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td (click)=delete(i)>Delete</td>
+  </tr>
+</table>
