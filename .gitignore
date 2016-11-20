@@ -1,3 +1,6 @@
 .DS_Store
 .sublime-project
 /hello_world/node_modules
+/hello_world/app/*.js
+/hello_world/app/*.map
+
