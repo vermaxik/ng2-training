@@ -9,3 +9,7 @@ npm-debug.log
 /table-component/app/*.js
 /table-component/app/*.map
 
+/ng2-todo-list/node_modules
+/ng2-todo-list/app/*.js
+/ng2-todo-list/app/*.map
+
