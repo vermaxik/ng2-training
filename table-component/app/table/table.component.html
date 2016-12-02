@@ -2,7 +2,7 @@
 <table>
   <tr *ngFor="let product of Products; let i = index;">
     <td>{{product.id}}</td>
-    <td>{{product.name}}</td>
+    <td [style.background-color]="product.price > 500 ? 'red' : ''">{{product.name}}</td>
     <td>{{product.price}}</td>
     <td (click)=delete(i)>Delete</td>
   </tr>

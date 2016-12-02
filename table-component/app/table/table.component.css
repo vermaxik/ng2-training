@@ -1,3 +1,8 @@
 table td:last-child {
   cursor: pointer;
 }
+
+.red-class {
+  background: red;
+  color: white;
+}
