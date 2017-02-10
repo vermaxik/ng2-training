@@ -1,4 +1,6 @@
+npm-debug.log
+
 .DS_Store
 node_modules/
 
-app/*.js
+app/**/*.js

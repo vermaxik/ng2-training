@@ -9,7 +9,7 @@ import { Component, Output } from '@angular/core';
 export class AppComponent {
   name = 'Angular';
 
-  deleteItem(id) {
+  deleteItem(id:number) {
     console.log(id);
   }
 }

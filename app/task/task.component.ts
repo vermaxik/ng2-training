@@ -9,7 +9,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class TaskComponent {
   @Input() id:number;
   @Input() name:string;
-  @Output() deleted:number = new EventEmitter();
+  @Output() deleted:EventEmitter<number> = new EventEmitter();
 
   removed() {
     this.deleted.emit(this.id);
