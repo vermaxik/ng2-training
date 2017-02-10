@@ -6,21 +6,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.name = 'Angular';
+var TaskComponent = (function () {
+    function TaskComponent() {
+        this.deleted = new core_1.EventEmitter();
     }
-    AppComponent.prototype.deleteItem = function (id) {
-        console.log(id);
+    TaskComponent.prototype.removed = function () {
+        this.deleted.emit(this.id);
+        console.log("Removed ");
     };
-    return AppComponent;
+    return TaskComponent;
 }());
-AppComponent = __decorate([
+__decorate([
+    core_1.Input()
+], TaskComponent.prototype, "id", void 0);
+__decorate([
+    core_1.Input()
+], TaskComponent.prototype, "name", void 0);
+__decorate([
+    core_1.Output()
+], TaskComponent.prototype, "deleted", void 0);
+TaskComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'app',
-        templateUrl: 'app.component.html',
-        styles: ['h1 {color: red}']
+        selector: 'task',
+        templateUrl: 'task.component.html'
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
+], TaskComponent);
+exports.TaskComponent = TaskComponent;
