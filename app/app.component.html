@@ -1,4 +1,3 @@
 <h1>Hello <span [textContent]="name" (click)="clicked()"></span></h1>
 
-<task id="1" name="First component" (deleted)="deleteItem($event)"></task>
-<task id="2" name="Second component" (deleted)="deleteItem($event)"></task>
+<task-list [tasks]="tasks"></task-list>

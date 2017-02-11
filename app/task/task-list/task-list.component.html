@@ -1,0 +1,1 @@
+<task *ngFor="let task of tasks" [id]="task.id" [name]="task.name" (deleted)="deleteItem($event)">{{task.description}}</task>

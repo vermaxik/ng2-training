@@ -9,6 +9,12 @@ import { Component, Output } from '@angular/core';
 export class AppComponent {
   name = 'Angular';
 
+  tasks:Array<Task> = [
+    {id: 1, name: 'First', description: 'description'},
+    {id: 2, name: 'Second'},
+    {id: 3, name: 'Third'},
+  ]
+
   deleteItem(id:number) {
     console.log(id);
   }
