@@ -1,6 +1,9 @@
-<div>
-  <input type="text" name="" value="{{id}}">
-  <input type="text" name="" value="{{name}}">
+<form [formGroup]="taskForm">
+  {{id}}
+  <input type="text" value="{{name}}" formControlName="name">
+  {{taskForm.controls.name.status}}
+  {{taskForm.controls.name.dirty}}
+  <button (click)="revert()">revert</button>
   <button (click)="removed()">remove</button>
   <ng-content></ng-content>
-</div>
+</form >
