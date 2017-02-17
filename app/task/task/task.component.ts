@@ -14,7 +14,7 @@ export class TaskComponent implements OnInit {
   taskForm: FormGroup;
   defaultName: string;
 
-  constructor(@Inject(FormBuilder) private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.defaultName = this.name;
@@ -24,12 +24,16 @@ export class TaskComponent implements OnInit {
   }
 
   revert() {
-    this.taskForm.controls.name.setValue(this.defaultName);
+    this.taskForm.controls['name'].setValue(this.defaultName);
   }
 
 
   removed() {
     this.deleted.emit(this.id);
     console.log("Removed ");
+  }
+
+  save() {
+    this.taskForm.get('name').reset(this.name);
   }
 }
