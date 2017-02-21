@@ -1,4 +1,6 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, OnInit } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   moduleId: module.id,
@@ -6,14 +8,16 @@ import { Component, Output } from '@angular/core';
   templateUrl: 'app.component.html',
   styles: ['h1 {color: red}']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   name = 'Angular';
 
-  tasks:Array<Task> = [
-    {id: 1, name: 'First', description: 'description'},
-    {id: 2, name: 'Second'},
-    {id: 3, name: 'Third'},
-  ]
+  constructor(private http: Http) {}
+
+  tasks:Observable<Task>
+
+  ngOnInit() {
+    this.http.get("app/tasks").subscribe(result => this.tasks = result.json().data);
+  }
 
   deleteItem(id:number) {
     console.log(id);
